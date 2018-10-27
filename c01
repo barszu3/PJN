@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Hello world"
+
+let x=1
+while read line
+	do
+		if [[ $line =~ (^-?[0-9]) ]]; then
+		array[x]=$line
+		((x++))
+		else
+			echo "to nie liczba"
+		fi
+	done
+echo "${array[@]}" | tr ' ' '\n' | sort -nur | tr '\n' ' '
