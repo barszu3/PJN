@@ -1,0 +1,11 @@
+#!/bin/bash
+
+let x=1
+while read line
+	do
+		cz=$(echo $line | grep -oP "cz" | wc -l)
+		sz=$(echo $line | grep -oP "sz" | wc -l)
+		echo $[$cz + $sz]
+		array[x]=$line
+		((x++))
+	done
