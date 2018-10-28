@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Hello world"
-
 let x=1
 while read line
 	do

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+let x=1
+while read line
+	do
+		if [[ $x = 123 ]]; then
+			echo  $line
+		fi
+		((x++))
+	done
