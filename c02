@@ -1,0 +1,15 @@
+#!/bin/bash
+
+let x=1
+while read line
+	do
+		array2=($(echo "$line" | tr ',', '\n'))
+		if [[ ${array2[2]} =~ (^-?[0-9]) ]]; then
+		array[x]=${array2[2]}
+		((x++))
+		else
+			echo "to nie liczba"
+		fi
+	done
+y=($(echo "${array[@]}" | tr ' ' '\n' | sort -nur | tr '\n' ' '))
+echo ${y[0]}
