@@ -1,0 +1,13 @@
+#!/bin/bash
+
+let x=0
+while read line
+	do
+		array[x]=$line
+		((x++))
+	done
+let len=${#array[@]}
+for (( i=$len; $i >= 1; i-- )) ; do
+	echo "$i ${array[$i-1]}"
+done
+
